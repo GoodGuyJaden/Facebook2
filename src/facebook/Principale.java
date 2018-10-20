@@ -10,14 +10,7 @@ public class Principale
 		
 	public static void main (String[]args)
 	{
-		menu();
-		/*Persona p1=new Persona("Mattia","Passuello","18");
-		Persona p2=new Persona("Andrea","Sabia","19");
-		u.addAmici(p1);
-		u.addAmici(p2);
-		System.out.println(u.cerca("Matteo"));*/
-		
-	
+		menu();	
 	}
 	
 	static public boolean sceltaAggiungi(Persona p)
@@ -25,8 +18,8 @@ public class Principale
 		String scelta;
 		
 		System.out.println("Vuoi aggiungere la persona taggata agli amici?  y/n");
-		
 		scelta=sc.nextLine();
+		
 		if(scelta.toLowerCase().equals("y"))
 		{
 			u.addAmici(p);
@@ -38,7 +31,6 @@ public class Principale
 	
 	static public boolean sceltaRicerca()
 	{
-		
 		String scelta;
 		String nome;
 		
@@ -58,7 +50,6 @@ public class Principale
 	
 	static public void menu()
 	{
-		
 		String scelta ="";
 		String nome;
 		String cognome;
@@ -67,7 +58,7 @@ public class Principale
 		
 		while(!scelta.equals("x")) 
 		{
-			/*
+			
 			System.out.println("");
 			System.out.println("Inserisci 1 per aggiungere un amico.");
 			System.out.println("Inserisci 2 per aggiungere una foto.");
@@ -76,18 +67,13 @@ public class Principale
 			System.out.println("Inserisci 5 per visualizzare la persona con più tag.");
 			System.out.println("Inserisci 6 per visualizzare la tua lista amici.");
 			System.out.println("Inserisci 7 per visualizzare la galleria.");
-			System.out.println("Inserisci 8 per rimuovere un amico");
-			System.out.println("Inserisci x per uscire");
-			*/
-			System.out.println("Inserisci 1 per aggiungere un amico.");
-			System.out.println("Inserisci 8 per rimuovere un amico");
+			System.out.println("Inserisci 8 per rimuovere un amico.");
+			System.out.println("Inserisci 9 per rimuoevere una foto.");
+			System.out.println("Inserisci x per uscire.");
 			scelta=sc.nextLine();
 			
 			switch(scelta)
 			{
-			case "0":
-				u.getIndice();
-				break;
 				case "1":
 						System.out.println("Inserisci 1)nome 2)cognome 3)eta separati da uno spazio: ");
 						//System.out.println("Inserisci il nome: ");
@@ -114,11 +100,9 @@ public class Principale
 							
 							else
 							{
-								System.out.println("Inserisci il nome: ");
+								System.out.println("Inserisci 1)nome 2)cognome 3)eta separati da uno spazio: ");
 								nome=sc.next();
-								System.out.println("Inserisci il cognome: ");
 								cognome=sc.next();
-								System.out.println("Inserisci l'età: ");
 								eta=sc.next();
 								sc.nextLine();
 								p=new Persona(nome,cognome,eta);
@@ -138,11 +122,9 @@ public class Principale
 						
 						else
 						{
-							System.out.println("Inserisci il nome: ");
+							System.out.println("Inserisci 1)nome 2)cognome 3)eta separati da uno spazio: ");
 							nome=sc.next();
-							System.out.println("Inserisci il cognome: ");
 							cognome=sc.next();
-							System.out.println("Inserisci l'età: ");
 							eta=sc.next();
 							sc.nextLine();
 							p=new Persona(nome,cognome,eta);
@@ -182,6 +164,16 @@ public class Principale
 							sc.nextLine();
 							u.remAmici(p);
 						}
+						break;
+						
+				case "9":
+						System.out.println("Inserisci il titolo della foto da cancellare.");
+						titolo=sc.nextLine();
+						u.remFoto(titolo);
+						break;
+						
+				case "x":
+						System.out.println("Grazie per aver usato la mia piattaforma :).");
 						break;
 						
 				default:

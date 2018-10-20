@@ -13,7 +13,12 @@ public class Foto
 
 	@Override
 	public String toString() {
-		return "Titolo: " + titolo + "; " + tag.nome + " " + tag.cognome + " è taggato in questa immagine.";
+		
+		if(this.tag==null)
+		{
+			return "Titolo: " + titolo + ";";
+		}
+		else return "Titolo: " + titolo + "; " + tag.nome + " " + tag.cognome + " è taggato in questa immagine.";
 	}
 	
 	
